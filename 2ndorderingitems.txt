@@ -1,0 +1,23 @@
+t=int(input())
+for k in range(t):
+    l=[]
+    for i in range(3):
+        a=list(map(int,input().split()))
+        l.append(a)
+    
+    l=sorted(l)
+    
+    count1=0
+    count2=0
+    answer="yes"
+    for j in range(3):
+        if(l[0][j]<l[1][j]):
+            count1+=1 
+        if(l[1][j]<l[2][j]):
+            count2+=1
+        if(l[0][j]>l[1][j] or l[1][j]>l[2][j]):
+            answer="no"
+            break
+        if(count1==0 or count2==0) and j==2:
+            answer="no"
+    print(answer)
